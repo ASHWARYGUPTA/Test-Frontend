@@ -9,7 +9,7 @@ function App() {
       {/* <SignInPage /> */}
       <BrowserRouter>
         <Routes>
-          <Route path="/dashboard" element={<HomePage />}></Route>
+          <Route path="/" element={<HomePage />}></Route>
           <Route path="/signin" element={<SignInPage />}></Route>
         </Routes>
       </BrowserRouter>
