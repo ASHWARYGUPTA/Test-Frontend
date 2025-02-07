@@ -6,18 +6,17 @@ import { useSetRecoilState } from "recoil";
 import { triggerIsSignedIn } from "../atoms/atoms";
 
 export const SignInComponent = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const setTriggerAtom = useSetRecoilState(triggerIsSignedIn);
   const {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
   } = useForm();
 
   const onSubmit = async (data: any) => {
-    setIsLoading((r) => !r);
+    // setIsLoading((r) => !r);
     const response = await axios.post("http://localhost:3000/signin", data, {
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +29,7 @@ export const SignInComponent = () => {
       setTriggerAtom((r) => r + 1);
       navigate("/dashboard");
     }
-    setIsLoading((r) => !r);
+    // setIsLoading((r) => !r);
     console.log("Form Submitted", data);
   };
 

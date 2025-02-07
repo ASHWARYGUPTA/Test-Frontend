@@ -32,14 +32,10 @@ export const InputForm = () => {
   const onSubmit = async (data: formType) => {
     const formData = new FormData();
     formData.append("file", data.file[0]);
-    const response = await axios.post(
-      "http://localhost:3000/upload",
-      formData,
-      {
-        headers: { "Content-Type": "multipart/form-data" },
-        withCredentials: true,
-      }
-    );
+    await axios.post("http://localhost:3000/upload", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+      withCredentials: true,
+    });
 
     setTriggerGetAccounts((r) => r + 1);
   };

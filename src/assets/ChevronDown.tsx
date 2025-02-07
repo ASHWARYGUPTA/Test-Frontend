@@ -2,7 +2,7 @@ interface ChevronDownInterface {
   rotate?: boolean;
 }
 
-export const ChevronDownIcon = ({ rotate = false }) => {
+export const ChevronDownIcon = ({ rotate = false }: ChevronDownInterface) => {
   const rotateConfig = "rotate-180 transition delay-0 duration-300 ease-in-out";
   return (
     <>

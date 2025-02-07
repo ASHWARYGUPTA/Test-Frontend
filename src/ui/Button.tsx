@@ -1,13 +1,6 @@
-import React, { ButtonHTMLAttributes, FC } from "react";
-
-enum buttonSizes {
-  small = "sm",
-  medium = "md",
-  large = "lg",
-}
+import React, { FC } from "react";
 
 interface ButtonProps {
-  size?: buttonSizes;
   children: React.ReactNode;
   onClick: () => void;
   typeButton?: "reset" | "button" | "submit";
@@ -15,7 +8,6 @@ interface ButtonProps {
 }
 
 export const Button: FC<ButtonProps> = ({
-  size = buttonSizes.medium,
   children,
   onClick = () => {},
   typeButton = "button",
