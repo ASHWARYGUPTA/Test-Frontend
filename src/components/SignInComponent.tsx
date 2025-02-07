@@ -16,12 +16,16 @@ export const SignInComponent = () => {
 
   const onSubmit = async (data: any) => {
     // setIsLoading((r) => !r);
-    const response = await axios.post("http://localhost:3000/signin", data, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      withCredentials: true,
-    });
+    const response = await axios.post(
+      "https://test-backend-k3y5.onrender.com/signin",
+      data,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
 
     if (response.data.value) {
       console.log("Signed In Successfully");

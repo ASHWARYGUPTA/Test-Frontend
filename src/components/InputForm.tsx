@@ -32,10 +32,14 @@ export const InputForm = () => {
   const onSubmit = async (data: formType) => {
     const formData = new FormData();
     formData.append("file", data.file[0]);
-    await axios.post("http://localhost:3000/upload", formData, {
-      headers: { "Content-Type": "multipart/form-data" },
-      withCredentials: true,
-    });
+    await axios.post(
+      "https://test-backend-k3y5.onrender.com/upload",
+      formData,
+      {
+        headers: { "Content-Type": "multipart/form-data" },
+        withCredentials: true,
+      }
+    );
 
     setTriggerGetAccounts((r) => r + 1);
   };

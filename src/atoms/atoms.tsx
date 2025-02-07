@@ -9,10 +9,13 @@ export const isSignedIn = selector({
   key: "isSignedIn",
   get: async ({ get }) => {
     get(triggerIsSignedIn);
-    return await fetch("http://localhost:3000/signin/isSignedIn", {
-      method: "GET",
-      credentials: "include",
-    })
+    return await fetch(
+      "https://test-backend-k3y5.onrender.com/signin/isSignedIn",
+      {
+        method: "GET",
+        credentials: "include",
+      }
+    )
       .then((res) => res.json())
       .then((res) => {
         // console.log(res.value);
@@ -30,7 +33,7 @@ export const GetAccounts = selector({
   key: "GetAccounts",
   get: async ({ get }) => {
     get(triggerGetAccounts);
-    return await fetch("http://localhost:3000/getAccounts", {
+    return await fetch("https://test-backend-k3y5.onrender.com/getAccounts", {
       method: "GET",
       credentials: "include",
     })

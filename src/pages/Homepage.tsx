@@ -66,9 +66,12 @@ export const HomePage = () => {
               typeStyle="danger"
               onClick={async () => {
                 // console.log("Hi");
-                const res = await axios.get("http://localhost:3000/logout", {
-                  withCredentials: true,
-                });
+                const res = await axios.get(
+                  "https://test-backend-k3y5.onrender.com/logout",
+                  {
+                    withCredentials: true,
+                  }
+                );
 
                 if (res.data.value) {
                   setTriggerIsSignedIn((r) => r + 1);

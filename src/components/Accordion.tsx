@@ -92,7 +92,7 @@ export const Accordion = (props: AccordionType) => {
         <button
           onClick={async () => {
             const res = await axios.delete(
-              "http://localhost:3000/getAccounts/delete",
+              "https://test-backend-k3y5.onrender.com/getAccounts/delete",
               {
                 headers: {
                   delete_id: props._id, // Replace _id with actual value
