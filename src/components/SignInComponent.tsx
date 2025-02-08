@@ -30,7 +30,7 @@ export const SignInComponent = () => {
     if (response.data.value) {
       console.log("Signed In Successfully");
       setTriggerAtom((r) => r + 1);
-      navigate("/dashboard");
+      navigate("/");
     }
     // setIsLoading((r) => !r);
     console.log("Form Submitted", data);
